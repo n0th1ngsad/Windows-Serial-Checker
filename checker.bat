@@ -1,6 +1,6 @@
 @echo off
 mode con: cols=80 lines=43
-:check
+:main
 title HWID Checker
 cls
 echo [96mBIOS[97m
@@ -29,4 +29,4 @@ echo [90m------------[97m
 wmic path Win32_NetworkAdapter where "PNPDeviceID like '%%PCI%%' AND NetConnectionStatus=2 AND AdapterTypeID='0'" get MacAddress
 echo [92mPress ENTER to check serial again[97m
 pause >nul
-goto check
+goto main
